@@ -115,7 +115,7 @@
 			autoplay={true}
 			duration={5000}
 			height="400px"
-			width="100%"
+			width="50%"
 			showControls={true}
 			showIndicators={true}
 		/>
