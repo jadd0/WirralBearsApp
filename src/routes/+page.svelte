@@ -2,8 +2,7 @@
 	import { onMount } from 'svelte';
 	import mapboxgl from 'mapbox-gl';
 	import 'mapbox-gl/dist/mapbox-gl.css';
-	import AOS from 'aos';
-	import 'aos/dist/aos.css';
+
 	import Carousel from '$lib/components/carousel/+page.svelte';
 
 	// Initialize AOS on mount
@@ -79,9 +78,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet" />
 </svelte:head>
 
-<div class="firstBG" id="1">
-	<img src="/images/bears big red.png" alt="" class="firstBear" id="2" />
-</div>
+
 
 <div id="all">
 	<!-- NavBar Div for tablet/PC -->
@@ -182,3 +179,204 @@
 
 	<!-- Footer -->
 </div>
+
+<style>
+	/* Home Styles CSS */
+
+/* First Bear Animation */
+.firstBG {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  background-color: #bbbaba;
+  z-index: 1000;
+}
+
+.firstBear {
+  margin: 0;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  z-index: 101;
+}
+
+/* Button Styling */
+.buttonHolder {
+  padding: 10px;
+}
+
+.formButton {
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.932);
+  transition: all 0.4s ease-out;
+}
+
+.formButton:hover {
+  background-color: rgb(121, 121, 121);
+  transform: scale(1.05, 1.05);
+}
+
+/* Slider Styling */
+.sliderOut {
+  padding: 30px 0px 30px 0px;
+}
+
+.slider {
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 7px solid white;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+}
+
+.slides {
+  width: 500%;
+  height: 20%;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Manual Slide Navigation */
+.navigation-manual {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+  margin-top: -40px;
+  left: 0;
+  right: 0;
+}
+
+.manual-btn {
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+  border: 3px solid white;
+  padding: 5px;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 7%;
+}
+
+.manual-btn:hover {
+  background: #ff0000;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+  margin-left: -60%;
+}
+
+/* Automatic Navigation */
+.navigation-auto {
+  position: absolute;
+  justify-content: center;
+  margin-top: 460px;
+  display: flex;
+  width: 800px;
+}
+
+.navigation-auto div {
+  border-radius: 10px;
+  transition: 1s;
+  border: 3px solid #c43af3;
+  padding: 5px;
+  width: 30px;
+}
+
+.navigation-auto div:not(:last-child) {
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+  background: #c43af3;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+  background: #c43af3;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+  background: #c43af3;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+  background: #c43af3;
+}
+
+/* Ball For All Section */
+.B4AOutBox {
+  padding: 10px;
+}
+
+.BallForAll {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.B4ABox {
+  border-radius: 50px;
+  border: 2px solid;
+  border-color: white;
+}
+
+.onw {
+  border-radius: 50px;
+  padding: 20px;
+  width: auto;
+  height: 300px;
+}
+
+.two {
+  margin: 0;
+  font-weight: bold;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+/* Responsive Styles for First Bear */
+@media only screen and (max-width: 450px) {
+  .firstBear {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .firstBear {
+    width: 40%;
+  }
+}
+
+</style>
